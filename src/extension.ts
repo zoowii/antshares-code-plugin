@@ -24,7 +24,33 @@ export function activate(context: vscode.ExtensionContext) {
         // The code you place here will be executed every time your command is executed
         // TODO
         // Display a message box to the user
-        vscode.window.showInformationMessage('TODO: compile csharp contract to avm');
+        // TODO: run csc xxx.cs -o xxxx.dll or dotnet build
+        // TODO: run dotnet AntShares.Compiler.MSIL.dll xxxx.dll
+        const cp = require('child_process')
+        const process = require('process');
+        const state = arguments[0];
+        console.log(arguments, state); // TODO: cs filename
+        const extensionPath = state.extensionPath;
+        const workspacePath = vscode.workspace.rootPath;
+        process.chdir(extensionPath);
+
+        const docs = vscode.workspace.textDocuments;
+        var csharpDocs = docs.filter((f) => f.languageId === "csharp")
+        if(csharpDocs.length !== 1) {
+            vscode.window.showInformationMessage('error: ' + "工作文件夹中只能唯一选择一个C#源文件");
+            return;
+        }
+        const filename = csharpDocs[0].fileName;
+        const outFilename = filename + ".avm";
+        cp.exec(extensionPath + '/antshares/ascsc-testnet ' + filename + " " + outFilename, (err, stdout, stderr) => {
+            console.log('stdout: ' + stdout);
+            console.log('stderr: ' + stderr);
+            if (err) {
+                vscode.window.showInformationMessage('error: ' + err);
+                return;
+            }
+            vscode.window.showInformationMessage('compile to avm successfully: ');
+        });
     });
 
     context.subscriptions.push(disposableOfQueryAnsBalance);

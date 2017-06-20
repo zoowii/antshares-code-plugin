@@ -1,8 +1,8 @@
 {
     "name": "antshares-code-plugin",
-    "displayName": "antshares_code_plugin",
+    "displayName": "antshares-code-plugin",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "zoowii",
     "engines": {
         "vscode": "^1.13.0"
@@ -12,6 +12,7 @@
     ],
     "activationEvents": [
         "onCommand:extension.queryAnsBalance",
+        "onCommand:extension.compile_avm",
         "onLanguage:csharp"
     ],
     "main": "./out/src/extension",

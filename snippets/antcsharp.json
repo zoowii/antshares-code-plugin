@@ -1,18 +1,18 @@
 {
     ".source.cs": {
-        "antshares functioncode": {
-            "prefix": "ans functioncode",
+        "neo functioncode": {
+            "prefix": "neo functioncode",
             "body": "using AntShares.SmartContract.Framework;\nusing AntShares.SmartContract.Framework.Services.AntShares;\n\nnamespace ${1:expression} {\n\n\tpublic class ${2:expression} : FunctionCode\n\t{\n\t\tpublic static void Main()\n\t\t{\n\t\t\tStorage.Put(Storage.CurrentContext, \"Hello\", \"World\");$0\n\t\t}\n\t}\n}"
         },
-        "antshares verificationcode": {
-            "prefix": "ans preficationcode",
+        "neo verificationcode": {
+            "prefix": "neo preficationcode",
             "body": "using AntShares.SmartContract.Framework;\nusing AntShares.SmartContract.Framework.Services.AntShares;\n\nnamespace ${1:expression} {\n\n\tpublic class ${2:expression} : VerificationCode\n\t{\n\t\tpublic static bool Verify()\n\t\t{\n\t\t\treturn true;$0\n\t\t}\n\t}\n}"
         },
-        "antshares using": {
-            "prefix": "ans using",
+        "neo using": {
+            "prefix": "neo using",
             "body": "using AntShares.SmartContract.Framework;\nusing AntShares.SmartContract.Framework.Services.AntShares;"
         },
-        "antshares main": {
+        "neo main": {
             "prefix": "psvm",
             "body": "public static void Main()\n\t\t{\n$0\n\t\t}"
         },

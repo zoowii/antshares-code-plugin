@@ -12,3 +12,5 @@ contract editor plugin for antshares blockchain
 * 注册到测试链
 * command调用合约
 * command查询小蚁地址状态
+* command类似小蚁区块浏览器的功能
+* 调试功能

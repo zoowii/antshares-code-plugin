@@ -20,12 +20,16 @@ export function activate(context: vscode.ExtensionContext) {
         // Display a message box to the user
         vscode.window.showInformationMessage('TODO: Hello World!');
     });
-    let disposableOfCompileCsharp = vscode.commands.registerCommand('extension.compile_avm', () => {
+
+    let disposableOfRunAntsharesContract = vscode.commands.registerCommand('extension.runAnsContract', () => {
         // The code you place here will be executed every time your command is executed
         // TODO
         // Display a message box to the user
-        // TODO: run csc xxx.cs -o xxxx.dll or dotnet build
-        // TODO: run dotnet AntShares.Compiler.MSIL.dll xxxx.dll
+        vscode.window.showInformationMessage('TODO: Hello World, runAnsContract!');
+    });
+
+    let disposableOfCompileCsharp = vscode.commands.registerCommand('extension.compile_avm', () => {
+        // The code you place here will be executed every time your command is executed
         const cp = require('child_process')
         const process = require('process');
         const state = arguments[0];
@@ -55,6 +59,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(disposableOfQueryAnsBalance);
     context.subscriptions.push(disposableOfCompileCsharp);
+    context.subscriptions.push(disposableOfRunAntsharesContract);
 }
 
 // this method is called when your extension is deactivated

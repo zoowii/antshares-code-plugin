@@ -1,8 +1,8 @@
 {
     "name": "antshares-code-plugin",
-    "displayName": "antshares-code-plugin",
+    "displayName": "neo",
     "description": "",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "zoowii",
     "engines": {
         "vscode": "^1.13.0"
@@ -13,17 +13,22 @@
     "activationEvents": [
         "onCommand:extension.queryAnsBalance",
         "onCommand:extension.compile_avm",
+        "onCommand:extension.runAnsContract",
         "onLanguage:csharp"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [{
                 "command": "extension.queryAnsBalance",
-                "title": "antshares query balance"
+                "title": "neo query balance"
             },
             {
                 "command": "extension.compile_avm",
-                "title": "antshares compile_avm"
+                "title": "neo compile to avm"
+            },
+            {
+                "command": "extension.runAnsContract",
+                "title": "neo run contract"
             }
         ],
         "snippets": [{
